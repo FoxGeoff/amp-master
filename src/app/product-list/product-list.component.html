@@ -1,3 +1,53 @@
-<p>
-  product-list works!
-</p>
+<div class='card'>
+  <div class='card-header'>
+      {{pageTitle}}
+  </div>
+  <div class='card-body'>
+      <div class='row'>
+          <div class='col-md-3'>
+              Filtered by:
+          </div>
+          <div class='col-md-2'>
+              <input type='text' />
+          </div>
+      </div>
+      <div class='row'>
+          <div class='col-md-3'>
+              <h4>Filtered by:</h4>
+          </div>
+      </div>
+  </div>
+  <div class='table-responsive'>
+      <table class='table'>
+          <thead>
+              <tr>
+                  <th>
+                      <button class='btn btn-primary' (click)='toggleImage()'>
+                          {{showImage ? 'Hide' : 'Show'}} Image
+                      </button>
+                  </th>
+                  <th>Product</th>
+                  <th>Code</th>
+                  <th>Available</th>
+                  <th>Price</th>
+                  <th>5 Star Rating</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <img>
+                  </td>
+                  <td>product</td>
+                  <td>code</td>
+                  <td> releaseDate </td>
+                  <td>price</td>
+                  <td>star rating</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+<div>
+  <div>Error Msg Here</div>
+</div>
