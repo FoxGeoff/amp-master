@@ -7,9 +7,26 @@ import { IProduct } from '../product';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) =>
+      product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
   pageTitle: string = "Fox Graphics Products";
   showImage: boolean = false;
-  listFilter: string = "cart";
+
+  _listFilter: string;
+  filteredProducts: IProduct[];
+
+  public get listFilter(): string {
+    return this._listFilter;
+  }
+  public set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
+
   products: IProduct[] = [
     {
       "productId": 1,
@@ -63,7 +80,10 @@ export class ProductListComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor() {
+    this.filteredProducts = this.products;
+    this.listFilter = 'cart';
+   }
 
   ngOnInit() {
   }

@@ -47,3 +47,4 @@ export class ConvertToSpacePipe implements PipeTransform {
 }
 
 ```
+*The ANgular team and many exprenced Angular developers strongly recommend moving filtering logic to the copmonent itself*
