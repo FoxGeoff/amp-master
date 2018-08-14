@@ -27,3 +27,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 # Project: Angular, Getting Started.
+ ## Main Component Lifecycle Hooks
+ 1. OnInit: Peform component initialization, retrive data.
+ 1. OnChange: Perform action after change to input properties.
+ 1. OnDestroy: Perform cleanup.
+
+## Check: Add Custom Pipe: shared/convert-to-space.pipe.ts
+```
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'convertToSpace'
+})
+export class ConvertToSpacePipe implements PipeTransform {
+
+  transform(value: string, character: string): string {
+    return value.replace(character, " ");
+  }
+}
+
+```
