@@ -36,13 +36,13 @@
           <tbody *ngFor = "let prod of products">
               <tr>
                   <td>
-                      <img src="{{prod.imageUrl}}" width="50px">
+                      <img [src]="prod.imageUrl" [title]="prod.productName" width="50px">
                   </td>
                   <td>{{prod.productName}}</td>
                   <td>{{prod.productCode}}</td>
                   <td> {{prod.releaseDate}} </td>
                   <td>{{prod.price|currency}}</td>
-                  <td>star rating</td>
+                  <td>{{prod.starRating}}</td>
               </tr>
           </tbody>
       </table>
