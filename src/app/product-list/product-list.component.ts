@@ -83,7 +83,7 @@ export class ProductListComponent implements OnInit {
   constructor() {
     this.filteredProducts = this.products;
     this.listFilter = 'cart';
-   }
+  }
 
   ngOnInit() {
   }
@@ -91,5 +91,9 @@ export class ProductListComponent implements OnInit {
   toggelImage(): void {
     this.showImage = !this.showImage;
   }
+
+  onRatingClicked(message: string): void {
+     this.pageTitle = "Product List: " + message;
+   }
 
 }
