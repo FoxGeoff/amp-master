@@ -43,7 +43,7 @@
                     <td> {{prod.releaseDate}} </td>
                     <td>{{prod.price|currency: 'USD' : 'symbol' : '1.2-2'}}</td>
                     <td>
-                        <app-star></app-star>
+                        <app-star [rating]="prod.starRating"></app-star>
                     </td>
                 </tr>
             </tbody>
