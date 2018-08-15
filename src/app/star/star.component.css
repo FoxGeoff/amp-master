@@ -1,5 +1,6 @@
 .crop {
     overflow: hidden;
+    font-size:13px;
   }
   div {
     cursor: pointer;
